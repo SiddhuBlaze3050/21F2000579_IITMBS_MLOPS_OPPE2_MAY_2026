@@ -1,0 +1,4 @@
+[core]
+    remote = storage
+['remote "storage"']
+    url = gs://21f2000579-mlops-oppe2-bucket/exam/files/md5
