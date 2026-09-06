@@ -6,6 +6,11 @@ metadata:
     app: heart-disease-api
 spec:
   replicas: 1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 1
   selector:
     matchLabels:
       app: heart-disease-api
@@ -22,10 +27,10 @@ spec:
         - containerPort: 8000
         resources:
           requests:
-            cpu: "200m"
-            memory: "256Mi"
+            cpu: "50m"
+            memory: "128Mi"
           limits:
-            cpu: "500m"
+            cpu: "300m"
             memory: "512Mi"
         readinessProbe:
           httpGet:
